@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'Spam/Css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Spam/template/xo.css' %}">
+    <link rel="stylesheet" href="{% static 'Spam/Css/radio.css' %}">
+    <title>AI Tools | NLP</title>
+
+    <style>
+body{
+    background: url("{% static 'Spam/Images/pratik.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.backbtn {
+    background-color: transparent; /* Fully transparent background */
+    color: #fff;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    border-radius: 50px;
+    border: 3px solid white; /* White border for the Back button */
+    margin: 20px 0;
+}
+
+.answer {
+    font-size: 30px;
+    padding: 43px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+    color: #333; /* Dark text for better readability */
+    text-align: center;
+    border: 3px solid #fff; /* Darker border for contrast */
+    margin: 20px auto; /* Center the element */
+    width: fit-content; /* Adjust width to fit the content */
+}
+
+.backbtn {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent */
+    color: #333; /* Dark text */
+    padding: 10px 30px;
+    font-size: 20px; /* Adjust font size */
+    border-radius: 25px;
+    border: 2px solid #333; /* Dark border */
+    text-decoration: none;
+    display: block;
+    margin: 20px auto; /* Center the button */
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Main Section Start -->
+    <section class="AnswerSection";>
+        <p class = "answer">
+            {% if answer == "ham" %}
+            Not Spam
+            {% else %}
+            Spam
+            {% endif %}
+        </p>
+        <a href="/" class="backbtn">Back</a>
+    </section>
+    <!-- Main Section End -->
+    
+<script src="./Js/JQuery.js"></script>
+<script src="./Js/Bootstrap.min.js"></script>
+<script src="./Js/Main.js"></script>
+</body>
+</html>

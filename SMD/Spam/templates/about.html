@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- Custom CSS -->
+     <link rel="stylesheet" href="aboutstyle.css">
+
+     <!-- Boxicons CSS -->
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ 
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+     <!-- Owl Carousel CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+ 
+     <!-- LightGallery CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css"/>
+     <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto',sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/*scroll bar */
+::-webkit-scrollbar{
+    width: 10px;
+    background:#f9f6f0;
+    color: white;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color:  tomato;
+}
+
+.flex-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+/default settings/
+section{
+    padding: 5px 1rem 23px 1rem;
+    padding-right: 12px;
+    margin-bottom: -1px;
+    width: 100%;
+    overflow: hidden;
+}
+img{
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    vertical-align: middle;
+}
+h1{
+    font-size: 48px;
+     font-weight: 500;
+     color: #2c2c2c;
+     line-height: 1.2;
+}
+h2{
+    color: #2c2c2c;
+}
+h3{
+    font-family: 'cookie',sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 34px;
+    margin-bottom: 15px;
+    line-height: 28px;
+    color: #ed2433;
+}
+h4{
+    color: #2c2c2c;
+    line-height: 1.8;
+    font-size: 24px;
+}
+h5{
+    color:#ed2433;
+    font-size: 20px;
+}
+p{
+    padding: 5px 0;
+    font-size: 18px;
+    color: #353535;
+    
+    font-weight: 400;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    display: flex;
+    list-style: none;
+}
+
+
+
+
+
+/navbar/
+#navbar{
+    position: absolute;
+    top: 45px;
+    left:15px;
+    right:12px;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    height: 5.5rem;
+    margin: 0.4rem;
+    border-radius: 60px;
+    justify-content: space-between;
+    padding: 55px 25px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 1px 4px hsla(0, 0%,0,0.2);
+}
+
+
+
+
+
+.cart-btn, .user-btn {
+    color: #fff;
+}
+
+.nav-btns {
+    position: absolute;
+    justify-content: space-between;
+    background-color: #2c2c2c;
+    margin-left: 70%;
+    gap: 28px; /* Space between the cart and user icons */
+    align-items: center;
+  
+}
+
+.navbar-brand img {
+    
+    margin-bottom: 20px;
+    height: 135px;
+    width: 137px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+.nav-item{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 25px;
+}
+
+#homeitem,
+.nav-item .nav-link{
+    color:white;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-item .nav-link:hover{
+    color:yellow;
+    background-color:#2c2c2c;
+    font-size: 26px;
+
+}
+#homeitem:hover{
+color: yellow;
+ background-color:#2c2c2c;
+    font-size: 26px;
+
+}
+.navbar-toggler-icon,span navbar-toggler-icon{
+    color: #fff;
+    background-color: white;
+    font-size: 24px;
+    margin-bottom: 32px;
+
+}
+
+.cart-btn, .user-btn {
+    color: #fff;
+    font-size: 45px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+ .user-btn:hover {
+    font-size: 50px;
+}
+.cart-btn:hover{
+    font-size: 50px;
+}
+.dropdown-item{
+    font-size: 25px;
+}
+.dropdown-item:hover{
+   
+    font-size: 28px;
+  
+}
+#navbar.fixed{
+    padding: 0 4.5rem;
+    margin: 0;
+    position: fixed;
+    top:0;
+    border-radius: 0;
+    height: 4rem;
+    background-color: blanchedalmond;
+}
+#navbar.scrolled {
+    background-color: pink !important;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/About/
+
+
+#about{
+    
+    background-color: #4b382a;
+    background-color: #3d2b1f;
+    background-color: #2c2c2c;
+
+}
+#abt{
+   width: 1100px;
+    height: 1100px;
+   float: left;
+    margin-left:-100px;
+    
+    background-color: #2c2c2c;
+}
+.abt-content h1{
+    
+    line-height: 1.5;
+    font-size: 45px;
+    margin-left: 50%;
+    font-family: "Satisfy", cursive;
+    font-weight: 800;
+    font-style: normal;
+    color: #f9f9f9;
+  
+   
+}
+
+.abt-content h2{
+    font-size: 40px;
+    margin-left: 40%;
+    color: #faf1f1;
+}
+.abt-content p{
+    font-size:30px;
+    margin: 3rem 0 3rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: block;
+    color: #ffffff;
+}
+
+footer {
+    background-color:darkblue;
+    color: white;
+    padding: 20px 0;
+    margin-top: -20px;
+    text-align: center;
+  }
+  .footer-section  p{
+    color: #e6b222;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    margin: 20px;
+  }
+  
+  .footer-section h3 {
+    color: #e6b222;
+  }
+  
+  .footer-bottom {
+    margin-bottom: 30px;
+    
+  }
+
+  .footer-bottom p{
+    color: #e6b222;
+  }
+  
+  a {
+    color: #e6b222;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #e6b222;
+  }
+     </style>
+</head>
+
+<body>
+   
+
+    <section id="about">
+      
+      
+      <div class="abt-content" style="background-color: #2c2c2c;">
+          <h1>About Us</h1>
+          <hr>
+          <br>
+          <br>
+          <h2>Spam Message Detection</h2>
+              <br>
+              <br>
+              <p>At Spam message detection website our mission is to create a safer and more enjoyable messaging experience for users by effectively detecting and filtering spam messages. We aim to empower individuals and organizations to communicate securely, free from the disruptions and dangers posed by unwanted content.</p>
+              <p>We specialize in developing innovative solutions for spam message detection, utilizing advanced machine learning algorithms and state-of-the-art technologies. Our system identifies unwanted and potentially harmful messages, including phishing attempts and scams, allowing users to focus on what matters most—genuine communication.</p>
+             <p> We prioritize the protection of our users' data and privacy. Our solutions are designed to mitigate risks and safeguard against malicious content. By providing reliable spam detection, we foster trust between users and messaging platforms, ensuring compliance with regulations and ethical communication practices.</p>
+             
+      </div>
+      
+        
+      </section>
+      
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h3>Spam Message Detection</h3>
+            <p>We would love to hear from you! If you have any questions, feedback, or suggestions, please feel free to reach out to us through our contact page or follow us on social media.</p>
+            <p><strong>Address:</strong> 123 Rue de la Gastronomie, Mumbai, Maharashtra, India - 400001</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Email:</strong> spammessage@gmail.com</p>
+          </div>
+      
+          <div class="footer-section social-media">
+            <h3>Follow Us</h3>
+            <a href="https://www.facebook.com/petitdelice" target="_blank">Facebook</a> |
+            <a href="https://www.instagram.com/petitdelice" target="_blank">Instagram</a> |
+            <a href="https://www.twitter.com/petitdelice" target="_blank">Twitter</a>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2024 Spam Message Detection. All Rights Reserved.</p>
+        </div>
+      </footer>
+      
+      
+      
+          <!-- Bootstrap JS Bundle -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      
+          <!-- jQuery JS Bundle -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+          <!-- Owl Carousel JS Bundle -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      
+          <!-- LightGallery JS Bundle -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+      
+          <!-- Custom JS -->
+          <script src=""></script>
+</body>
+</html>
+</html>

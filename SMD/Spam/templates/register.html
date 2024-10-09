@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background: url('pics/home\ carousel/pic1.jpg');
+    background-size: cover;
+    background-repeat: none;
+}
+
+.container {
+    background-color:#dfba69;
+    width: 300px;
+    margin: 100px auto;
+    padding: 120px;
+    
+   
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    width: 300px;
+    border:2px solid black;
+    margin: 100px auto;
+    padding: 120px;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 40px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 25px;
+    background-color: #4b382a;;
+    color:rgb(255, 157, 0);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:rgb(255, 157, 0); 
+    color:#4b382a;
+    border: 2px solid black;
+}
+
+p {
+    color: black;
+    text-align: center;
+    font-size: 20px;
+   
+}
+p a{
+    text-decoration: none;
+    margin-left: 17px;
+    color: black;
+    font-size: 20px;
+}
+h3{
+    color:black;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+
+        <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+
+        <h3>Username<input type="text" id="username" name="username" placeholder="Username" required></h3>
+            <h3>Email<input type="email" name="email" placeholder="Email" required></h3>
+           <h3>Password<input type="password" id="password" name="password" placeholder="Password" required></h3>
+       
+            <button type="submit">Register</button>
+        </form>
+    
+        <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </div>
+
+    <script>
+        function validateForm() {
+            const usernameInput = document.getElementById('username');
+            const username = usernameInput.value;
+            const firstLetter = username.charAt(0);
+    
+            const passwordInput = document.getElementById('password');
+            const password = passwordInput.value;
+    
+            let isValid = true;
+    
+            // Validate username
+            if (firstLetter !== firstLetter.toUpperCase()) {
+                usernameInput.setCustomValidity("Please use the first letter as a capital letter in the username.");
+                isValid = false;
+            } else {
+                usernameInput.setCustomValidity("");  // Clear the warning if valid
+            }
+    
+            // Validate password
+            if (password.length < 8) {
+                passwordInput.setCustomValidity("Password must be at least 8 characters.");
+                isValid = false;
+            } else {
+                passwordInput.setCustomValidity("");  // Clear the warning if valid
+            }
+    
+            // Ensure the form is validated again after correction
+            return isValid;
+        }
+    
+        document.getElementById('username').addEventListener('input', function() {
+            // Clear custom validity whenever the input changes
+            this.setCustomValidity('');
+        });
+    
+        document.getElementById('password').addEventListener('input', function() {
+            // Clear custom validity whenever the input changes
+            this.setCustomValidity('');
+        });
+    </script>
+    
+    
+</body>
+</html>

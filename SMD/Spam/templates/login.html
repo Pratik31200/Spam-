@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-size: cover;
+    background-repeat: none;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    width: 300px;
+    border:2px solid black;
+    margin: 100px auto;
+    padding: 120px;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 40px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 25px;
+    background-color: #4b382a;;
+    color:rgb(255, 157, 0);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:rgb(255, 157, 0); 
+    color:#4b382a;
+    border: 2px solid black;
+}
+
+p {
+    color: brown;
+    text-align: center;
+    font-size: 20px;
+   
+}
+p a{
+    text-decoration: none;
+    margin-left: 17px;
+    color: brown;
+    font-size: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="index.html" method="POST">
+        <!--<form action="{% url 'login' %}" method="POST">-->
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? 
+            <a href="register.html">Register here</a></p>
+
+        <!--Display error message if authentication fails-->
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
